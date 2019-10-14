@@ -1,0 +1,25 @@
+import cv2 as cv
+import numpy as np
+
+def multiplicao(img1, k):
+
+    resultImage = np.zeros((img1.shape[0], img1.shape[1], img1.shape[2]), np.uint8)
+    rows, cols, pixel = img1.shape
+
+    for i in range(rows):
+        for j in range(cols):
+
+            mult = img[i, j, 0] * k
+
+            if mult > 255 :
+                mult = 255
+
+            resultImage [i, j, 0] = mult
+    return resultImage
+
+img = cv.imread('soma1.jpg', 1)
+cv.imshow('mult', multiplicao(img, 0.5))
+
+cv.waitKey()
+
+
